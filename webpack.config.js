@@ -1,13 +1,15 @@
+const path = require('path');
+
 module.exports = {
-  entry: "./lib/cannons",
+  entry: './lib/cannons.js',
   output: {
-    filename: "./lib/bundle"
+    filename: './dist/dist/lib/bundle.js'
   },
   module: {
     rules: [
       {
-        test: [/\.jsx?$/, /\.js?$/],
-        exclude: /node_modules/,
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
         loader: 'babel-loader',
         query: {
           presets: ['env', 'react']
@@ -17,6 +19,6 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: [".js", ".jsx", "*"]
+    extensions: ['.js', '.jsx', '*']
   }
 };
